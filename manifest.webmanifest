@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Turismo Angola",
+  "short_name": "Turismo Angola",
+  "description": "Descubra destinos turísticos, natureza e cultura de Angola.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f8f6",
+  "theme_color": "#176b4d",
+  "lang": "pt",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

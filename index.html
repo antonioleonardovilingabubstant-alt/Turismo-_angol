@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087443">
+  <meta name="description" content="Turismo Angola — descubra paisagens, cultura, praias e destinos turísticos de Angola.">
+  <title>Turismo Angola | Descubra Angola</title>
+  <style>
+    :root{--green:#087443;--green2:#0b9255;--gold:#f2b544;--ink:#17251d;--muted:#627168;--paper:#f7faf7;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:76px}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+    a{color:inherit} .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #e5eee8;backdrop-filter:blur(10px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;color:var(--green);font-size:1.05rem}
+    .logo{display:grid;place-items:center;width:38px;height:38px;background:var(--green);color:white;border-radius:12px;font-size:1.2rem}
+    nav{display:flex;align-items:center;gap:20px} nav a{text-decoration:none;font-size:.93rem;font-weight:650}
+    nav a:hover{color:var(--green2)} .menu-btn{display:none;border:0;background:#eaf5ee;border-radius:10px;padding:10px;font-size:1.15rem}
+    .hero{min-height:540px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,38,24,.88),rgba(5,38,24,.35)),url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .hero-content{padding:80px 0;max-width:690px}.eyebrow{color:#ffe09a;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem}
+    h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.04;margin:16px 0}.hero p{font-size:1.12rem;max-width:570px;color:#eef8f0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:800;border:2px solid transparent;cursor:pointer;font-size:.95rem}
+    .btn-primary{background:var(--gold);color:#1d281f}.btn-outline{border-color:#fff;color:#fff;background:transparent}.btn-green{background:var(--green);color:white}
+    .quick-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-35px;position:relative}
+    .fact{background:white;padding:20px;border-radius:16px;box-shadow:0 10px 28px #153d2412;border:1px solid #e6eee8}
+    .fact strong{display:block;font-size:1.05rem;color:var(--green)}.fact span{color:var(--muted);font-size:.9rem}
+    section{padding:76px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    .kicker{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;font-weight:850;color:var(--green)}
+    h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;margin:8px 0 0}.section-head p{color:var(--muted);max-width:490px;margin:0}
+    .searchbar{display:flex;gap:10px;margin:22px 0 26px}.searchbar input,.searchbar select{min-width:0;border:1px solid #d5e2d8;background:#fff;padding:13px 14px;border-radius:11px;font:inherit}
+    .searchbar input{flex:1}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #e2ebe4;box-shadow:0 8px 22px #173b2508;display:flex;flex-direction:column}
+    .card img{width:100%;height:205px;object-fit:cover;background:#e6eee8}.card-body{padding:18px;display:flex;flex-direction:column;flex:1}
+    .tag{display:inline-block;font-size:.75rem;font-weight:800;background:#e8f5ec;color:var(--green);padding:5px 9px;border-radius:30px;align-self:flex-start}
+    .card h3{margin:12px 0 6px;font-size:1.2rem}.card p{color:var(--muted);margin:0 0 15px;font-size:.94rem}.card a{margin-top:auto;text-decoration:none;color:var(--green);font-weight:850}
+    .empty{grid-column:1/-1;padding:28px;text-align:center;color:var(--muted);background:white;border-radius:14px}
+    .culture{background:#eaf4ed}.culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.culture img{width:100%;height:360px;object-fit:cover;border-radius:20px}
+    .feature-list{padding:0;list-style:none}.feature-list li{margin:15px 0;display:flex;gap:12px}.check{background:#d3ead9;color:var(--green);border-radius:9px;width:30px;height:30px;display:grid;place-items:center;flex-shrink:0;font-weight:900}
+    .province-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.province{background:white;border:1px solid #e2ebe4;padding:16px;border-radius:13px;font-weight:750}.province small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+    .callout{background:var(--green);color:white;border-radius:22px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.callout p{color:#e2f3e8;margin-bottom:0;max-width:650px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.contact-panel{background:white;border:1px solid #e1ebe4;padding:24px;border-radius:17px}.contact-panel p{color:var(--muted)}
+    label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 6px}input,textarea{width:100%;font:inherit;border:1px solid #d5e2d8;padding:12px;border-radius:10px;background:#fff}textarea{min-height:110px;resize:vertical}
+    .note{font-size:.82rem;color:var(--muted)} footer{background:#10291c;color:#e9f5ed;padding:30px 0;margin-top:20px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-row p{margin:5px 0;color:#b9d0c1;font-size:.88rem}
+    @media(max-width:800px){nav{display:none;position:absolute;left:0;right:0;top:68px;background:#fff;padding:16px 4%;border-bottom:1px solid #e5eee8;flex-direction:column;align-items:flex-start;gap:16px}nav.open{display:flex}.menu-btn{display:block}.cards{grid-template-columns:repeat(2,1fr)}.province-grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:flex-start;flex-direction:column}.hero{min-height:490px}.culture-grid{grid-template-columns:1fr}.culture img{height:280px}}
+    @media(max-width:540px){.quick-facts{grid-template-columns:1fr;margin-top:16px}.fact{padding:15px}.hero{min-height:480px}.hero-content{padding:60px 0}.cards{grid-template-columns:1fr}.card img{height:220px}section{padding:56px 0}.searchbar{flex-direction:column}.callout{padding:24px;align-items:flex-start;flex-direction:column}.contact-grid{grid-template-columns:1fr}.footer-row{align-items:flex-start;flex-direction:column}.province-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="logo">🇦🇴</span><span>Turismo Angola</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#destinos">Destinos</a><a href="#cultura">Cultura</a><a href="#provincias">Províncias</a><a href="#sobre">Sobre</a><a href="#contactos">Contactos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-content">
+      <div class="eyebrow">Um país, muitas descobertas</div>
+      <h1>Descubra a beleza de Angola.</h1>
+      <p>Da força das quedas de água às praias do Atlântico, descubra paisagens, cultura e experiências que tornam Angola especial.</p>
+      <div class="actions"><a class="btn btn-primary" href="#destinos">Explorar destinos <span>→</span></a><a class="btn btn-outline" href="#provincias">Conhecer as províncias</a></div>
+    </div>
+  </section>
+
+  <div class="wrap quick-facts" aria-label="Destaques">
+    <div class="fact"><strong>Natureza extraordinária</strong><span>Quedas de água, desertos, rios e parques.</span></div>
+    <div class="fact"><strong>Cultura viva</strong><span>Música, gastronomia, artesanato e tradições.</span></div>
+    <div class="fact"><strong>Experiências para descobrir</strong><span>Praias, cidades, história e aventura.</span></div>
+  </div>
+
+  <section id="destinos">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Inspire a sua viagem</div><h2>Destinos em destaque</h2></div><p>Comece por alguns dos lugares conhecidos de Angola. Confirme sempre acessos, condições locais e serviços antes de viajar.</p></div>
+      <div class="searchbar">
+        <input id="searchInput" type="search" placeholder="Pesquisar destino..." aria-label="Pesquisar destino">
+        <select id="regionFilter" aria-label="Filtrar por região">
+          <option value="">Todas as regiões</option><option value="Norte">Norte</option><option value="Centro">Centro</option><option value="Sul">Sul</option><option value="Litoral">Litoral</option>
+        </select>
+      </div>
+      <div class="cards" id="destinationCards">
+        <article class="card" data-name="Quedas de Kalandula Malanje" data-region="Norte">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=900&q=80" alt="Queda de água rodeada de vegetação">
+          <div class="card-body"><span class="tag">Natureza · Norte</span><h3>Quedas de Kalandula</h3><p>Uma das paisagens naturais mais emblemáticas do país, na província de Malanje.</p><a href="https://www.google.com/maps/search/?api=1&query=Quedas+de+Kalandula+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+        <article class="card" data-name="Miradouro da Lua Luanda" data-region="Litoral">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Paisagem natural com formações rochosas">
+          <div class="card-body"><span class="tag">Paisagem · Litoral</span><h3>Miradouro da Lua</h3><p>Formações de ravinas e tons terrosos junto à costa, a sul de Luanda.</p><a href="https://www.google.com/maps/search/?api=1&query=Miradouro+da+Lua+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+        <article class="card" data-name="Ilha do Mussulo Luanda praia" data-region="Litoral">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Praia de areia e mar azul">
+          <div class="card-body"><span class="tag">Praia · Litoral</span><h3>Ilha do Mussulo</h3><p>Uma zona costeira procurada para momentos de descanso e passeios junto ao mar.</p><a href="https://www.google.com/maps/search/?api=1&query=Ilha+do+Mussulo+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+        <article class="card" data-name="Serra da Leba Huíla Namibe estrada" data-region="Sul">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Montanhas e vale sob céu aberto">
+          <div class="card-body"><span class="tag">Montanha · Sul</span><h3>Serra da Leba</h3><p>Uma estrada de montanha famosa pelas curvas e pelas vistas sobre a paisagem.</p><a href="https://www.google.com/maps/search/?api=1&query=Serra+da+Leba+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+        <article class="card" data-name="Tundavala Huíla Lubango" data-region="Sul">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Vista panorâmica de um vale montanhoso">
+          <div class="card-body"><span class="tag">Miradouro · Sul</span><h3>Fenda da Tundavala</h3><p>Um miradouro natural perto do Lubango, conhecido pela amplitude da paisagem.</p><a href="https://www.google.com/maps/search/?api=1&query=Fenda+da+Tundavala+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+        <article class="card" data-name="Parque Nacional da Quiçama Luanda natureza" data-region="Litoral">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Elefantes numa paisagem de savana">
+          <div class="card-body"><span class="tag">Vida selvagem · Litoral</span><h3>Parque Nacional da Quiçama</h3><p>Uma área natural importante para conhecer a biodiversidade e a savana angolana.</p><a href="https://www.google.com/maps/search/?api=1&query=Parque+Nacional+da+Qui%C3%A7ama+Angola" target="_blank" rel="noopener">Ver no mapa ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="culture" id="cultura">
+    <div class="wrap culture-grid">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=80" alt="Mesa com comida para partilhar">
+      <div><div class="kicker">Mais do que paisagens</div><h2>Conheça a cultura angolana</h2><p>Viajar também é conhecer as pessoas, a música, os sabores, a história e as tradições de cada região.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span><div><strong>Gastronomia</strong><br><span class="note">Descubra pratos locais e sabores regionais.</span></div></li>
+          <li><span class="check">✓</span><div><strong>Música e dança</strong><br><span class="note">Conheça ritmos e expressões culturais de Angola.</span></div></li>
+          <li><span class="check">✓</span><div><strong>História e património</strong><br><span class="note">Explore monumentos, museus e lugares históricos.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="provincias">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Explore o país</div><h2>Províncias para descobrir</h2></div><p>Use esta lista como ponto de partida para planear futuras páginas regionais.</p></div>
+      <div class="province-grid">
+        <div class="province">Luanda<small>Cidade, costa e cultura</small></div><div class="province">Malanje<small>Quedas de água e natureza</small></div>
+        <div class="province">Huíla<small>Montanhas e miradouros</small></div><div class="province">Namibe<small>Litoral e paisagens áridas</small></div>
+        <div class="province">Benguela<small>Praias e património</small></div><div class="province">Huambo<small>Planalto e jardins</small></div>
+        <div class="province">Cuando Cubango<small>Rios e natureza</small></div><div class="province">Cunene<small>Cultura e paisagens do sul</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="wrap">
+      <div class="callout"><div><div class="eyebrow">Turismo Angola</div><h2>O próximo destino pode ser aqui.</h2><p>Este site é uma primeira versão de apresentação turística. As informações de viagem devem ser confirmadas localmente antes da visita.</p></div><a class="btn btn-primary" href="#contactos">Fale connosco</a></div>
+    </div>
+  </section>
+
+  <section id="contactos">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Entre em contacto</div><h2>Contactos e sugestões</h2></div><p>Tem uma sugestão de destino, uma correção ou quer colaborar com o projeto?</p></div>
+      <div class="contact-grid">
+        <div class="contact-panel"><h3>Ajude-nos a melhorar</h3><p>Envie sugestões de locais, eventos culturais e informações úteis para os visitantes.</p><p><strong>Projeto:</strong> Turismo Angola</p><p><strong>Local:</strong> Angola</p><p class="note">Os contactos oficiais podem ser adicionados aqui antes da publicação.</p></div>
+        <form class="contact-panel" id="contactForm">
+          <label for="visitorName">O teu nome</label><input id="visitorName" name="name" required placeholder="Escreve o teu nome">
+          <label for="visitorEmail">E-mail (opcional)</label><input id="visitorEmail" name="email" type="email" placeholder="nome@exemplo.com">
+          <label for="visitorMessage">Mensagem ou sugestão</label><textarea id="visitorMessage" name="message" required placeholder="Escreve a tua mensagem..."></textarea>
+          <button class="btn btn-green" type="submit" style="margin-top:14px">Preparar mensagem</button>
+          <p class="note" id="formNote">O botão abre a aplicação de e-mail do teu dispositivo; ainda é necessário configurar um endereço de destino.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><div><strong>🇦🇴 Turismo Angola</strong><p>Descubra, respeite e valorize Angola.</p></div><p>© <span id="year"></span> Turismo Angola · Primeira versão</p></div></footer>
+<script>
+  const menuBtn=document.getElementById('menuBtn');
+  const mainNav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',()=>{const open=mainNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+  mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mainNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+  const searchInput=document.getElementById('searchInput'), regionFilter=document.getElementById('regionFilter');
+  function filterCards(){const term=searchInput.value.toLocaleLowerCase('pt');const region=regionFilter.value;let shown=0;
+    document.querySelectorAll('#destinationCards .card').forEach(card=>{const matchText=card.dataset.name.toLocaleLowerCase('pt').includes(term)||card.textContent.toLocaleLowerCase('pt').includes(term);const matchRegion=!region||card.dataset.region===region;const show=matchText&&matchRegion;card.style.display=show?'flex':'none';if(show)shown++;});
+    let empty=document.getElementById('emptyResults');if(!shown){if(!empty){empty=document.createElement('div');empty.id='emptyResults';empty.className='empty';empty.textContent='Não encontrámos destinos com esses filtros. Tenta outra pesquisa.';document.getElementById('destinationCards').appendChild(empty);}}else if(empty)empty.remove();
+  }
+  searchInput.addEventListener('input',filterCards);regionFilter.addEventListener('change',filterCards);
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('visitorName').value.trim();const email=document.getElementById('visitorEmail').value.trim();const msg=document.getElementById('visitorMessage').value.trim();const subject=encodeURIComponent('Sugestão para Turismo Angola');const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+email+'\n\nMensagem:\n'+msg);document.getElementById('formNote').textContent='Para ativar o envio, adicione o seu endereço de e-mail no código do site. Por agora, a mensagem está preparada para copiar.';const text='Assunto: Sugestão para Turismo Angola\n\n'+decodeURIComponent(body);if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>{document.getElementById('formNote').textContent='Mensagem copiada. Pode colá-la num e-mail ou WhatsApp.';}).catch(()=>{alert(text);});}else{alert(text);}});
+</script>
+</body>
+</html>
